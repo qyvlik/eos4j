@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.qyvlik</groupId>
   <artifactId>io.eblock.eos-eos4j</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>eos4j</name>
    <properties>
      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
