@@ -40,6 +40,21 @@
         <tag>HEAD</tag>
     </scm>
 
+    <url>https://github.com/qyvlik/eos4j</url>
+
+    <developers>
+        <developer>
+            <name>espritblock</name>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>GNU/GPL Version 3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+        </license>
+    </licenses>
+
     <profiles>
         <profile>
             <id>release</id>

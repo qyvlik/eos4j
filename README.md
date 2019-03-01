@@ -1,5 +1,16 @@
 # eos4j
 
+## maven
+
+```xml
+<dependency>
+    <groupId>io.github.qyvlik</groupId>
+    <artifactId>io.eblock.eos-eos4j</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```
+
+
 eosio 1.0.1 for java 
 
 change writeName add writeUint64 support custom contract
