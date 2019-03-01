@@ -11,8 +11,8 @@ public class Hex {
 	/**
 	 * toBytes
 	 * 
-	 * @param hexString
-	 * @return
+	 * @param hex hex
+	 * @return		byte
 	 */
 	public static byte[] toBytes(String hex) {
 		if (hex == null || hex.length() % 2 != 0) {
@@ -38,8 +38,8 @@ public class Hex {
 	/**
 	 * bytesToHexString
 	 * 
-	 * @param src
-	 * @return
+	 * @param src src
+	 * @return	return
 	 */
 	public static String bytesToHexString(byte[] src) {
 		StringBuilder stringBuilder = new StringBuilder("");
@@ -60,8 +60,8 @@ public class Hex {
 	/**
 	 * hexStringToBytes
 	 * 
-	 * @param hexString
-	 * @return
+	 * @param hexString	hexString
+	 * @return			return
 	 */
 	public static byte[] hexStringToBytes(String hexString) {
 		if (hexString == null || hexString.equals("")) {

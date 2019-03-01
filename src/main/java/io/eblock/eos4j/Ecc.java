@@ -17,9 +17,9 @@ public class Ecc {
 	/**
 	 * 通过种子生成私钥
 	 * 
-	 * @param seed
-	 *            种子
-	 * @return
+	 * @param seed	种子
+	 *
+	 * @return		result
 	 */
 	public static String seedPrivate(String seed) {
 		return EccTool.seedPrivate(seed);
@@ -28,9 +28,9 @@ public class Ecc {
 	/**
 	 * 通过私钥生成公钥
 	 * 
-	 * @param privateKey
-	 *            私钥
-	 * @return
+	 * @param privateKey	私钥
+	 *
+	 * @return				result
 	 */
 	public static String privateToPublic(String privateKey) {
 		return EccTool.privateToPublic(privateKey);
@@ -43,7 +43,7 @@ public class Ecc {
 	 *            私钥
 	 * @param data
 	 *            需要签名的数据
-	 * @return
+	 * @return		result
 	 */
 	public static String sign(String privateKey, String data) {
 		return EccTool.sign(privateKey, data);
@@ -54,9 +54,9 @@ public class Ecc {
 	 * 
 	 * @param privateKey
 	 *            私钥
-	 * @param data
+	 * @param sign
 	 *            需要签名的对象
-	 * @return
+	 * @return	result
 	 */
 	public static String signTransaction(String privateKey, TxSign sign) {
 		return EccTool.signTransaction(privateKey, sign);
@@ -73,7 +73,7 @@ public class Ecc {
 	 *            转账金额和币种
 	 * @param memo
 	 *            备注留言
-	 * @return
+	 * @return	result
 	 */
 	public static String parseTransferData(String from, String to, String quantity, String memo) {
 		return Ese.parseTransferData(from, to, quantity, memo);
@@ -81,10 +81,10 @@ public class Ecc {
 	
 	/**
 	 * 
-	 * @param voter
-	 * @param proxy
-	 * @param producers
-	 * @return
+	 * @param voter			voter
+	 * @param proxy			proxy
+	 * @param producers		producers
+	 * @return				result
 	 */
 	public static String parseVoteProducerData(String voter, String proxy, List<String> producers) {
 		return Ese.parseVoteProducerData(voter, proxy, producers);
@@ -97,11 +97,11 @@ public class Ecc {
 	 *            创建者
 	 * @param name
 	 *            账户名
-	 * @param onwe
+	 * @param onwer
 	 *            onwer公钥
 	 * @param active
 	 *            active公钥
-	 * @return
+	 * @return		result
 	 */
 	public static String parseAccountData(String creator, String name, String onwer, String active) {
 		return Ese.parseAccountData(creator, name, onwer, active);
@@ -116,7 +116,7 @@ public class Ecc {
 	 *            接收账户
 	 * @param bytes
 	 *            购买字节数量
-	 * @return
+	 * @return		result
 	 */
 	public static String parseBuyRamData(String payer, String receiver, Long bytes) {
 		return Ese.parseBuyRamData(payer, receiver, bytes);
@@ -135,7 +135,7 @@ public class Ecc {
 	 *            CPU抵押数量和币种
 	 * @param transfer
 	 *            是否讲抵押资产转送给对方，0自己所有，1对方所有
-	 * @return
+	 * @return		result
 	 */
 	public static String parseBuyRamData(String from, String receiver, String stakeNetQuantity, String stakeCpuQuantity,
 			int transfer) {
@@ -144,9 +144,9 @@ public class Ecc {
 	
 	/**
 	 * 关闭token
-	 * @param owner
-	 * @param symble
-	 * @return
+	 * @param owner		owner
+	 * @param symbol	symbol
+	 * @return			result
 	 */
 	public static String parseCloseData(String owner, String symbol) {
 		return Ese.parseCloseData(owner, symbol);

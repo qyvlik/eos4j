@@ -20,8 +20,8 @@ public class Sha {
 	/**
 	 * sha256
 	 * 
-	 * @param text
-	 * @return
+	 * @param text	text
+	 * @return		return
 	 */
 	public static byte[] SHA256(final String text) {
 		if (text == null || text.length() == 0) {
@@ -43,8 +43,8 @@ public class Sha {
 	/**
 	 * sha256
 	 * 
-	 * @param text
-	 * @return
+	 * @param b b
+	 * @return return
 	 */
 	public static byte[] SHA256(final byte[] b) {
 		if (b == null || b.length == 0) {
@@ -66,9 +66,9 @@ public class Sha {
 	/**
 	 * HMACSHA256
 	 * 
-	 * @param data
-	 * @param key
-	 * @return
+	 * @param data data
+	 * @param key	key
+	 * @return		return
 	 */
 	public static byte[] HmacSHA256(byte[] data, byte[] key) {
 		try {

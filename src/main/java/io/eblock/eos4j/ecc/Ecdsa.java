@@ -26,10 +26,10 @@ public class Ecdsa {
 	/**
 	 * sign
 	 * 
-	 * @param dataHash
-	 * @param d
-	 * @param nonce
-	 * @return
+	 * @param dataHash		dataHash
+	 * @param d				d
+	 * @param nonce			nonce
+	 * @return				签名
 	 */
 	public SignBigInt sign(String dataHash, BigInteger d, int nonce) {
 		BigInteger n = curve.n();
@@ -46,8 +46,8 @@ public class Ecdsa {
 	/**
 	 * toDER
 	 * 
-	 * @param big
-	 * @return
+	 * @param big		big
+	 * @return			toDER
 	 */
 	private byte[] toDER(SignBigInt big) {
 		byte[] rBa = big.getR().toByteArray();
@@ -145,11 +145,11 @@ public class Ecdsa {
 	/**
 	 * checkSig
 	 * 
-	 * @param k
-	 * @param d
-	 * @param e
-	 * @param big
-	 * @return
+	 * @param k		k
+	 * @param d		d
+	 * @param e		e
+	 * @param big	big
+	 * @return		result
 	 */
 	public Boolean checkSig(BigInteger k, BigInteger d, BigInteger e, SignBigInt big) {
 		Point Q = curve.G().multiply(k);

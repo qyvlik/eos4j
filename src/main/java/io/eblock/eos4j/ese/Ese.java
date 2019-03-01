@@ -16,9 +16,11 @@ public class Ese {
 
 	/**
 	 * parseTransferData
-	 * 
-	 * @param datas
-	 * @return
+	 * @param from		from
+	 * @param to		to
+	 * @param quantity	quantity
+	 * @param memo		memo
+	 * @return			result
 	 */
 	public static String parseTransferData(String from, String to, String quantity, String memo) {
 		DataParam[] datas = new DataParam[] { new DataParam(from, DataType.name, Action.transfer),
@@ -36,13 +38,14 @@ public class Ese {
 		// }
 		return Hex.bytesToHexString(allbyte);
 	}
-	
+
 
 	/**
 	 * parseTransferData
-	 * 
-	 * @param datas
-	 * @return
+	 * @param voter			voter
+	 * @param proxy			proxy
+	 * @param producers		producers
+	 * @return				result
 	 */
 	public static String parseVoteProducerData(String voter, String proxy, List<String> producers) {
 		List<DataParam> datas = new ArrayList<DataParam>();
@@ -63,14 +66,15 @@ public class Ese {
 //		 }
 		return Hex.bytesToHexString(allbyte);
 	}
-	
-	
+
 
 	/**
 	 * parseTransferData
-	 * 
-	 * @param datas
-	 * @return
+	 * @param creator		creator
+	 * @param name			name
+	 * @param onwer			onwer
+	 * @param active		active
+	 * @return				result
 	 */
 	public static String parseAccountData(String creator, String name, String onwer, String active) {
 
@@ -94,9 +98,12 @@ public class Ese {
 
 	/**
 	 * parseBuyRamData
-	 * 
-	 * @param datas
-	 * @return
+	 * @param from				from
+	 * @param receiver			receiver
+	 * @param stakeNetQuantity	stakeNetQuantity
+	 * @param stakeCpuQuantity	stakeCpuQuantity
+	 * @param transfer			transfer
+	 * @return					result
 	 */
 	public static String parseDelegateData(String from, String receiver, String stakeNetQuantity,
 			String stakeCpuQuantity, int transfer) {
@@ -117,9 +124,10 @@ public class Ese {
 
 	/**
 	 * parseTransferData
-	 * 
-	 * @param datas
-	 * @return
+	 * @param payer		payer
+	 * @param receiver	receiver
+	 * @param bytes		bytes
+	 * @return			result
 	 */
 	public static String parseBuyRamData(String payer, String receiver, Long bytes) {
 
@@ -134,12 +142,12 @@ public class Ese {
 		}
 		return Hex.bytesToHexString(allbyte);
 	}
-	
+
 	/**
 	 * parseCloseData
-	 * 
-	 * @param datas
-	 * @return
+	 * @param owner		owner
+	 * @param symbol	symbol
+	 * @return			return
 	 */
 	public static String parseCloseData(String owner, String symbol) {
 		DataParam[] datas = new DataParam[] { 

@@ -27,8 +27,8 @@ public class EccTool {
 	/**
 	 * seedPrivate
 	 * 
-	 * @param seed
-	 * @return
+	 * @param seed 	私钥种子
+	 * @return 		返回私钥
 	 */
 	public static String seedPrivate(String seed) {
 		if (seed == null || seed.length() == 0) {
@@ -47,8 +47,8 @@ public class EccTool {
 	/**
 	 * privateKey
 	 * 
-	 * @param pk
-	 * @return
+	 * @param pk 	私钥
+	 * @return 		返回私钥的大整数表示
 	 */
 	private static BigInteger privateKey(String pk) {
 		byte[] private_wif = Base58.decode(pk);
@@ -68,8 +68,8 @@ public class EccTool {
 	/**
 	 * privateToPublic
 	 * 
-	 * @param pk
-	 * @return
+	 * @param pk 	私钥
+	 * @return 		返回私钥的公钥
 	 */
 	public static String privateToPublic(String pk) {
 		if (pk == null || pk.length() == 0) {
@@ -90,9 +90,9 @@ public class EccTool {
 
 	/**
 	 * signHash
-	 * @param pk
-	 * @param b
-	 * @return
+	 * @param pk 	私钥
+	 * @param b 	等待签名的数据内容
+	 * @return 		签名后的内容
 	 */
 	public static String signHash(String pk, byte[] b) {
 		String dataSha256 = Hex.bytesToHexString(Sha.SHA256(b));
@@ -131,9 +131,9 @@ public class EccTool {
 
 	/**
 	 * sign string
-	 * @param pk
-	 * @param data
-	 * @return
+	 * @param pk		私钥
+	 * @param data		待签名的内容
+	 * @return			返回签名
 	 */
 	public static String sign(String pk, String data) {
 		String dataSha256 = Hex.bytesToHexString(Sha.SHA256(data));
@@ -172,9 +172,9 @@ public class EccTool {
 
 	/**
 	 * signTransaction 
-	 * @param privateKey
-	 * @param push
-	 * @return
+	 * @param privateKey		私钥
+	 * @param push				推送的内容
+	 * @return					返回hash
 	 */
 	public static String signTransaction(String privateKey, TxSign push) {
 		// tx

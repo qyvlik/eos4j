@@ -21,8 +21,8 @@ public class Base58 {
 	/**
 	 * encode
 	 * 
-	 * @param input
-	 * @return
+	 * @param input input
+	 * @return		return
 	 */
 	public static String encode(byte[] input) {
 		if (input.length == 0) {
@@ -60,9 +60,9 @@ public class Base58 {
 	/**
 	 * decode
 	 * 
-	 * @param input
-	 * @return
-	 * @throws IllegalArgumentException
+	 * @param input	input
+	 * @return	return
+	 * @throws IllegalArgumentException	IllegalArgumentException
 	 */
 	public static byte[] decode(String input) throws IllegalArgumentException {
 		if (input.length() == 0) {
@@ -103,9 +103,9 @@ public class Base58 {
 	/**
 	 * decodeToBigInteger
 	 * 
-	 * @param input
-	 * @return
-	 * @throws IllegalArgumentException
+	 * @param input	input
+	 * @return			return
+	 * @throws IllegalArgumentException IllegalArgumentException
 	 */
 	public static BigInteger decodeToBigInteger(String input) throws IllegalArgumentException {
 		return new BigInteger(1, decode(input));
@@ -114,9 +114,9 @@ public class Base58 {
 	/**
 	 * divmod58
 	 * 
-	 * @param number
-	 * @param startAt
-	 * @return
+	 * @param number	number
+	 * @param startAt	startAt
+	 * @return			return
 	 */
 	private static byte divmod58(byte[] number, int startAt) {
 		int remainder = 0;
@@ -132,9 +132,9 @@ public class Base58 {
 	/**
 	 * divmod256
 	 * 
-	 * @param number58
-	 * @param startAt
-	 * @return
+	 * @param number58	number58
+	 * @param startAt	startAt
+	 * @return			return
 	 */
 	private static byte divmod256(byte[] number58, int startAt) {
 		int remainder = 0;
@@ -150,10 +150,10 @@ public class Base58 {
 	/**
 	 * copyOfRange
 	 * 
-	 * @param source
-	 * @param from
-	 * @param to
-	 * @return
+	 * @param source	source
+	 * @param from		from
+	 * @param to		to
+	 * @return			return
 	 */
 	private static byte[] copyOfRange(byte[] source, int from, int to) {
 		byte[] range = new byte[to - from];

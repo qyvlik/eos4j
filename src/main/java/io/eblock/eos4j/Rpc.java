@@ -44,7 +44,7 @@ public class Rpc {
 	/**
 	 * 获得链信息
 	 * 
-	 * @return
+	 * @return		result
 	 */
 	public ChainInfo getChainInfo() {
 		return Generator.executeSync(rpcService.getChainInfo());
@@ -55,7 +55,7 @@ public class Rpc {
 	 * 
 	 * @param blockNumberOrId
 	 *            区块ID或者高度
-	 * @return
+	 * @return		result
 	 */
 	public Block getBlock(String blockNumberOrId) {
 		return Generator.executeSync(rpcService.getBlock(Collections.singletonMap("block_num_or_id", blockNumberOrId)));
@@ -66,7 +66,7 @@ public class Rpc {
 	 * 
 	 * @param account
 	 *            账户名称
-	 * @return
+	 * @return		result
 	 */
 	public Account getAccount(String account) {
 		return Generator.executeSync(rpcService.getAccount(Collections.singletonMap("account_name", account)));
@@ -75,8 +75,8 @@ public class Rpc {
 	/**
 	 * 获得table数据
 	 * 
-	 * @param req
-	 * @return
+	 * @param req	req
+	 * @return		result
 	 */
 	public TableRows getTableRows(TableRowsReq req) {
 		return Generator.executeSync(rpcService.getTableRows(req));
@@ -91,8 +91,8 @@ public class Rpc {
 	 *            交易
 	 * @param signatures
 	 *            签名
-	 * @return
-	 * @throws Exception
+	 * @return			result
+	 * @throws Exception	Exception
 	 */
 	public Transaction pushTransaction(String compression, Tx pushTransaction, String[] signatures) throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
@@ -105,9 +105,9 @@ public class Rpc {
 	/**
 	 * 发送交易
 	 * 
-	 * @param tx
-	 * @return
-	 * @throws Exception
+	 * @param tx			tx
+	 * @return				result
+	 * @throws Exception	Exception
 	 */
 	public Transaction pushTransaction(String tx) throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
@@ -120,7 +120,7 @@ public class Rpc {
 	 * 
 	 * @param exp
 	 *            过期时间秒
-	 * @return
+	 * @return		result
 	 */
 	public SignParam getOfflineSignParams(Long exp) {
 		SignParam params = new SignParam();
@@ -149,8 +149,8 @@ public class Rpc {
 	 *            币种金额
 	 * @param memo
 	 *            留言
-	 * @return
-	 * @throws Exception
+	 * @return				result
+	 * @throws Exception	Exception
 	 */
 	public Transaction transfer(String pk, String contractAccount, String from, String to, String quantity, String memo)
 			throws Exception {
@@ -208,8 +208,8 @@ public class Rpc {
 	 *            公钥
 	 * @param buyRam
 	 *            ram
-	 * @return
-	 * @throws Exception
+	 * @return				result
+	 * @throws Exception	Exception
 	 */
 	public Transaction createAccount(String pk, String creator, String newAccount, String owner, String active,
 			Long buyRam) throws Exception {
@@ -277,8 +277,8 @@ public class Rpc {
 	 *            cpu抵押
 	 * @param transfer
 	 *            抵押资产是否转送给对方，0自己所有，1对方所有
-	 * @return
-	 * @throws Exception
+	 * @return				result
+	 * @throws Exception	Exception
 	 */
 	public Transaction createAccount(String pk, String creator, String newAccount, String owner, String active,
 			Long buyRam, String stakeNetQuantity, String stakeCpuQuantity, Long transfer) throws Exception {
@@ -344,12 +344,12 @@ public class Rpc {
 	
 	/**
 	 * 
-	 * @param pk
-	 * @param voter
-	 * @param proxy
-	 * @param producers
-	 * @return
-	 * @throws Exception
+	 * @param pk			pk
+	 * @param voter			voter
+	 * @param proxy			proxy
+	 * @param producers		producers
+	 * @return				result
+	 * @throws Exception	Exception
 	 */
 	public Transaction voteproducer(String pk,String voter,String proxy,List<String> producers) throws Exception {
 		Comparator<String> comparator = (h1, h2) -> h2.compareTo(h1);
@@ -390,10 +390,11 @@ public class Rpc {
 	
 	/**
 	 * token close
-	 * @param owner
-	 * @param symbol
-	 * @return
-	 * @throws Exception
+	 * @param contract		contract
+	 * @param owner			owner
+	 * @param symbol		symbol
+	 * @return				result
+	 * @throws Exception	Exception
 	 */
 	public Transaction close(String pk,String contract,String owner, String symbol)throws Exception {
 		ChainInfo info = getChainInfo();			

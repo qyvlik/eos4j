@@ -34,11 +34,11 @@ public class OfflineSign {
 
 	/**
 	 * 
-	 * @param compression
-	 * @param pushTransaction
-	 * @param signatures
-	 * @return
-	 * @throws Exception
+	 * @param compression		compression
+	 * @param pushTransaction	pushTransaction
+	 * @param signatures		signatures
+	 * @return					result
+	 * @throws Exception		Exception
 	 */
 	public String pushTransaction(String compression, Tx pushTransaction, String[] signatures) throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
@@ -49,15 +49,15 @@ public class OfflineSign {
 	/**
 	 * 离线签名转账
 	 * 
-	 * @param signParam
-	 * @param pk
-	 * @param contractAccount
-	 * @param from
-	 * @param to
-	 * @param quantity
-	 * @param memo
-	 * @return
-	 * @throws Exception
+	 * @param signParam			signParam
+	 * @param pk				pk
+	 * @param contractAccount	contractAccount
+	 * @param from				from
+	 * @param to				to
+	 * @param quantity			quantity
+	 * @param memo				memo
+	 * @return					result
+	 * @throws Exception		Exception
 	 */
 	public String transfer(SignParam signParam, String pk, String contractAccount, String from, String to,
 			String quantity, String memo) throws Exception {
@@ -94,15 +94,15 @@ public class OfflineSign {
 	/**
 	 * 离线签名创建账户
 	 * 
-	 * @param signParam
-	 * @param pk
-	 * @param creator
-	 * @param newAccount
-	 * @param owner
-	 * @param active
-	 * @param buyRam
-	 * @return
-	 * @throws Exception
+	 * @param signParam			signParam
+	 * @param pk				pk
+	 * @param creator			creator
+	 * @param newAccount		newAccount
+	 * @param owner				owner
+	 * @param active			active
+	 * @param buyRam			buyRam
+	 * @return					result
+	 * @throws Exception		Exception
 	 */
 	public String createAccount(SignParam signParam, String pk, String creator, String newAccount, String owner,
 			String active, Long buyRam) throws Exception {

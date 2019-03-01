@@ -18,8 +18,8 @@ public class ByteUtils {
 	/**
 	 * charidx
 	 * 
-	 * @param c
-	 * @return
+	 * @param c c
+	 * @return	return
 	 */
 	public static int charidx(char c) {
 		return charmap.indexOf(c);
@@ -28,9 +28,9 @@ public class ByteUtils {
 	/**
 	 * concat
 	 * 
-	 * @param a
-	 * @param b
-	 * @return
+	 * @param a a
+	 * @param b b
+	 * @return  return
 	 */
 	public static byte[] concat(byte[] a, byte[] b) {
 		byte[] c = new byte[a.length + b.length];
@@ -41,10 +41,10 @@ public class ByteUtils {
 
 	/**
 	 * copy
-	 * 
-	 * @param a
-	 * @param b
-	 * @return
+	 * @param src		src
+	 * @param start		start
+	 * @param length	length
+	 * @return			return
 	 */
 	public static byte[] copy(byte[] src, int start, int length) {
 		byte[] c = new byte[length];
@@ -54,10 +54,12 @@ public class ByteUtils {
 
 	/**
 	 * copy
-	 * 
-	 * @param a
-	 * @param b
-	 * @return
+	 * @param src		src
+	 * @param start		start
+	 * @param dest		dest
+	 * @param dstart	dstart
+	 * @param length	length
+	 * @return			return
 	 */
 	public static byte[] copy(byte[] src, int start, byte[] dest, int dstart, int length) {
 		System.arraycopy(src, start, dest, dstart, length);
@@ -66,9 +68,8 @@ public class ByteUtils {
 
 	/**
 	 * LongToBytes
-	 * 
-	 * @param values
-	 * @return
+	 * @param n n
+	 * @return return
 	 */
 	public static int[] LongToBytes(Long n) {
 		ByteBuffer hi = ByteBuffer.allocate(Long.BYTES).order(ByteOrder.BIG_ENDIAN).putLong(n);
@@ -79,8 +80,8 @@ public class ByteUtils {
 
 	/**
 	 * 
-	 * @param value
-	 * @return
+	 * @param value value
+	 * @return		return
 	 */
 	public static String stringToAscii(String value) {
 		StringBuffer sbu = new StringBuffer();
@@ -98,8 +99,8 @@ public class ByteUtils {
 	/**
 	 * writerUnit32
 	 * 
-	 * @param value
-	 * @return
+	 * @param value value
+	 * @return		return
 	 */
 	public static byte[] writerUnit32(String value) {
 
@@ -124,8 +125,8 @@ public class ByteUtils {
 	/**
 	 * writerUnit16
 	 * 
-	 * @param value
-	 * @return
+	 * @param value	value
+	 * @return		return
 	 */
 	public static byte[] writerUnit16(String value) {
 		long vl = Long.parseLong(value);
@@ -135,8 +136,8 @@ public class ByteUtils {
 	/**
 	 * writerUnit8
 	 * 
-	 * @param value
-	 * @return
+	 * @param value	value
+	 * @return		return
 	 */
 	public static byte[] writerUnit8(String value) {
 		long vl = Long.parseLong(value);
@@ -146,8 +147,8 @@ public class ByteUtils {
 	/**
 	 * writerVarint32
 	 * 
-	 * @param v
-	 * @return
+	 * @param v v
+	 * @return	return
 	 */
 	public static byte[] writerVarint32(String v) {
 		long value = Long.parseLong(v);
@@ -165,8 +166,8 @@ public class ByteUtils {
 	/**
 	 * writerAsset
 	 * 
-	 * @param v
-	 * @return
+	 * @param v	v
+	 * @return	return
 	 */
 	public static byte[] writerAsset(String v) {
 		String _value[] = v.split(" ");
@@ -212,8 +213,8 @@ public class ByteUtils {
 	/**
 	 * writerAsset
 	 * 
-	 * @param v
-	 * @return
+	 * @param v	v
+	 * @return	return
 	 */
 	public static byte[] writerSymbol(String v) {
 		String _value[] = v.split(" ");
@@ -259,8 +260,8 @@ public class ByteUtils {
 	/**
 	 * writerAccount
 	 * 
-	 * @param v
-	 * @return
+	 * @param v	v
+	 * @return	return
 	 */
 	public static byte[] writeName(String v) {
 		StringBuffer bitstr = new StringBuffer();
@@ -290,11 +291,6 @@ public class ByteUtils {
 		return ByteBuffer.allocate(Long.BYTES).order(ByteOrder.LITTLE_ENDIAN).putLong(ulName.longValue()).array();
 	}
 
-	/**
-	 * charCount
-	 * 
-	 * @return
-	 */
 	private static long charCount(String v) {
 		long c = 0;
 		for (char cp : v.toCharArray()) {
@@ -314,8 +310,8 @@ public class ByteUtils {
 	/**
 	 * writerString
 	 * 
-	 * @param v
-	 * @return
+	 * @param v v
+	 * @return	return
 	 */
 	public static byte[] writerString(String v) {
 		long value = charCount(v);
@@ -333,12 +329,7 @@ public class ByteUtils {
 		return a;
 	}
 
-	/**
-	 * decodeChar
-	 * 
-	 * @param ca
-	 * @return
-	 */
+
 	private static byte[] decodeChar(char ca) {
 		long cp = (long) ca;
 		if (cp < 0x80) {
@@ -365,8 +356,8 @@ public class ByteUtils {
 	/**
 	 * writerKey
 	 * 
-	 * @param v
-	 * @return
+	 * @param v v
+	 * @return result
 	 */
 	private static byte[] writerKeyStr(String v) {
 		v = v.replace("EOS", "");
@@ -379,7 +370,7 @@ public class ByteUtils {
 	/**
 	 * writerKey
 	 * 
-	 * @param key
+	 * @param key	key
 	 */
 	public static byte[] writerKey(String key) {
 		io.eblock.eos4j.utils.ByteBuffer bf = new io.eblock.eos4j.utils.ByteBuffer();
